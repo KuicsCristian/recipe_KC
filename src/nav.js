@@ -71,15 +71,15 @@ class Nav extends Component {
           </a>
           <a
             class="nav-link"
-            id="v-pills-adaugaReteta-tab"
+            id="v-pills-adaugarecipe-tab"
             data-toggle="pill"
             href="adauga"
             role="tab"
-            aria-controls="v-pills-adaugaReteta"
+            aria-controls="v-pills-adaugarecipe"
             aria-selected="false"
             style={{ color: "white" }}
           >
-            <MDBNavLink to="/adauga-reteta">
+            <MDBNavLink to="/adauga-recipe">
               <h5>
                 <FaDrumstickBite></FaDrumstickBite>
                 <span style={{ paddingLeft: "20px" }}>Adaugă rețetă</span>

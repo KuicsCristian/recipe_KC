@@ -4,8 +4,8 @@ import Logo from "./assets/images/logo_salad.png";
 
 class Recipes extends Component {
   render() {
-    const { reteta } = this.props;
-    const { denumire, poza, ingrediente } = reteta;
+    const { recipe } = this.props;
+    const { denumire, picture, ingredients } = recipe;
 
     return (
       <>
@@ -17,7 +17,7 @@ class Recipes extends Component {
 
         <div class="card">
           <img alt=""
-            src={"http://localhost/dbrecipes/" + poza}
+            src={"http://localhost/dbrecipes/" + picture}
             class="card-img-top img-fluid"
           />
           <div class="card-body">
@@ -25,12 +25,12 @@ class Recipes extends Component {
             <p class="card-text"></p>
 
             <ul className="ingredients">
-              {ingrediente.map(ingredient => {
-                const { idi, denumireing, continutcal } = ingredient;
+              {ingredients.map(ingredient => {
+                const { iding, ingname, calcont } = ingredient;
                 return (
-                  <li key={idi} className="ingredient">
-                    <span>{denumireing}</span>
-                    <span>{continutcal} calorii</span>
+                  <li key={iding} className="ingredient">
+                    <span>{ingname}</span>
+                    <span>{calcont} calorii</span>
                   </li>
                 );
               })}
@@ -39,9 +39,9 @@ class Recipes extends Component {
             <div className="total">
               <span>Total calorii:</span>
               <span>
-                {ingrediente.reduce(
+                {ingredients.reduce(
                   (totalCal, ingredient) =>
-                    totalCal + parseInt(ingredient.continutcal),
+                    totalCal + parseInt(ingredient.calcont),
                   2
                 )}
               </span>

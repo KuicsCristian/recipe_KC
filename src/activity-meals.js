@@ -7,7 +7,7 @@ class ActivityMeals extends Component {
 
     if (recipes) {
       const listarecipes = Object.keys(recipes).map(item => (
-        <Meals key={item} reteta={recipes[item]} />
+        <Meals key={item} recipe={recipes[item]} />
       ));
 
       return (

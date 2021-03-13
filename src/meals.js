@@ -2,8 +2,8 @@ import React, { Component } from "react";
 
 class Meals extends Component {
   render() {
-    const { reteta } = this.props;
-    const { denumire, poza } = reteta;
+    const { recipe } = this.props;
+    const { denumire, picture } = recipe;
 
     return (
       <>
@@ -12,7 +12,7 @@ class Meals extends Component {
           class="list-group-item list-group-item-action"
         >
           <img alt=""
-            src={"http://localhost/dbrecipes/" + poza }
+            src={"http://localhost/dbrecipes/" + picture }
             class="card-img"
             style={{ height: "auto", width: "80px" }}
           />

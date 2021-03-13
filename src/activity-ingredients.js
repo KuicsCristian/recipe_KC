@@ -4,11 +4,11 @@ import { MDBNavLink } from "mdbreact";
 
 class ActivityIngredients extends Component {
   render() {
-    const { ingrediente } = this.props;
+    const { ingredients } = this.props;
 
-    if (ingrediente) {
-      const listaIngrediente = Object.keys(ingrediente).map(item => (
-        <AddRecipes key={item} ingredient={ingrediente[item]} />
+    if (ingredients) {
+      const listaingredients = Object.keys(ingredients).map(item => (
+        <AddRecipes key={item} ingredient={ingredients[item]} />
       ));
 
       return (
@@ -76,9 +76,9 @@ class ActivityIngredients extends Component {
                   paddingTop: "30px"
                 }}
               >
-                Selectează ingrediente:
+                Selectează ingredients:
               </h6>
-              <div>{listaIngrediente}</div>
+              <div>{listaingredients}</div>
 
               <div>
                 <label

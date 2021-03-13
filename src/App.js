@@ -14,7 +14,7 @@ class App extends Component {
     super(props);
     this.state = {
       recipes: [],
-      ingrediente: []
+      ingredients: []
     };
 
     this.reincarc = this.reincarc.bind(this);
@@ -31,12 +31,12 @@ class App extends Component {
   }
 
   reincarcIng() {
-    return fetch("http://localhost/dbrecipes/api/ingrediente.php")
+    return fetch("http://localhost/dbrecipes/api/ingredients.php")
       .then(rezultat => {
         return rezultat.json();
       })
-      .then(listaIngrediente =>
-        this.setState({ ingrediente: listaIngrediente })
+      .then(listaingredients =>
+        this.setState({ ingredients: listaingredients })
       )
       .catch(error => console.log("Request failed: ", error));
   }
@@ -69,11 +69,11 @@ class App extends Component {
                 />
                 <Route
                   exact
-                  path="/adauga-reteta"
+                  path="/adauga-recipe"
                   render={props => (
                     <div>
                       <ActivityIngredients
-                        ingrediente={this.state.ingrediente}
+                        ingredients={this.state.ingredients}
                       />
                     </div>
                   )}
